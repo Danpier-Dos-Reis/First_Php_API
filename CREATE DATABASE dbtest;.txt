@@ -1,0 +1,21 @@
+CREATE DATABASE dbtest;
+
+CREATE TABLE testexcel (
+ id int unsigned NOT NULL auto_increment PRIMARY KEY,
+ nombre varchar(100) NOT NULL,
+ fecha datetime NOT NULL,
+ linkurl text NOT NULL,
+ nulos varchar(100)
+);
+
+CREATE USER 'windan'@'%' IDENTIFIED BY 'd@np13_d0sr3Is';
+GRANT ALL PRIVILEGES ON *.* TO 'windan'@'%' WITH GRANT OPTION;
+
+if (response.ok) {
+            const data = await response.json(); // Procesar respuesta JSON
+            console.log("Respuesta del servidor:", data);
+            alert("¡Conexión exitosa con la API!");
+        } else {
+            console.error("Error al conectar con la API:", response.statusText);
+            alert("Hubo un problema al conectar con la API.");
+        }
